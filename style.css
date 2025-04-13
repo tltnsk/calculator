@@ -32,8 +32,8 @@ body {
 #calculator-display {
     width: 100%;
     text-align: right;
-    font-size: 60px;
-    padding: 15px;
+    font-size: 30px;
+    padding: 30px;
     border: none;
     border-radius: 10px;
     background-color: #212121;
@@ -83,6 +83,11 @@ button:hover {
 
 #equal-sign {
     width: 130px;
+    border-radius: 30px;
+}
+
+#clearButton {
+    width: 190px;
     border-radius: 30px;
 }
 

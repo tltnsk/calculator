@@ -11,34 +11,32 @@
     <div class="container">
         <div class="calculator">
             <div id="display">
-                <input type="text" id="calculator-display">
+                <input type="text" id="calculator-display" disabled>
             </div>
             <div id="row1">
-                <button class="additionalBtn">C</button>
-                <button class="additionalBtn">+/-</button>
-                <button class="additionalBtn">%</button>
-                <button class="operator" id="operation-division">&divide;</button>
+                <button class="additionalBtn" id="clearButton"><i class="fas fa-arrow-left"></i></button>
+                <button class="operator" id="operation-division" data-operator>÷</button>
             </div>
             <div id="row2">
-                <button id="num-7" class="numbers">7</button>
-                <button id="num-8" class="numbers">8</button>
-                <button id="num-9" class="numbers">9</button>
-                <button class="operator" id="operation-multiplication">&times;</button>
+                <button id="num-7" class="numbers" data-number>7</button>
+                <button id="num-8" class="numbers" data-number>8</button>
+                <button id="num-9" class="numbers" data-number>9</button>
+                <button class="operator" id="operation-multiplication" data-operator>×</button>
             </div>
             <div id="row3">
-                <button id="num-4" class="numbers">4</button>
-                <button id="num-5" class="numbers">5</button>
-                <button id="num-6" class="numbers">6</button>
-                <button class="operator" id="operation-subtraction">-</button>
+                <button id="num-4" class="numbers" data-number>4</button>
+                <button id="num-5" class="numbers" data-number>5</button>
+                <button id="num-6" class="numbers" data-number>6</button>
+                <button class="operator" id="operation-subtraction" data-operator="">-</button>
             </div>
             <div id="row4">
-                <button id="num-1" class="numbers">1</button>
-                <button id="num-2" class="numbers">2</button>
-                <button id="num-3" class="numbers">3</button>
-                <button class="operator" id="operation-addition">+</button>
+                <button id="num-1" class="numbers" data-number>1</button>
+                <button id="num-2" class="numbers" data-number>2</button>
+                <button id="num-3" class="numbers" data-number>3</button>
+                <button class="operator" id="operation-addition" data-operator>+</button>
             </div>
             <div id="row5">
-                <button id="num-0" class="numbers">0</button>
+                <button id="num-0" class="numbers" data-number>0</button>
                 <button id="dot" class="numbers">.</button>
                 <button class="operator" id="equal-sign">=</button>
             </div>
@@ -50,5 +48,6 @@
           <i class="fab fa-github"></i> tltnsk
         </a>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
