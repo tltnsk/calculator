@@ -119,3 +119,68 @@ footer {
     font-size: 18px;
     vertical-align: middle;
 }
+
+#theme-switch {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: #9c9b9d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+#theme-switch svg {
+    fill: #000;
+}
+
+#theme-switch svg:first-child {
+    display: none;
+}
+
+body.dark-mode {
+    background-image: linear-gradient(62deg, #4b4b92 0%, #b3afb8 100%);
+    color: #f1f1f1;
+}
+
+body.dark-mode .calculator {
+    background-color: #c9c9dd; 
+}
+
+body.dark-mode .numbers {
+    background-color: #7a79c2;
+    color: #f0f0f0;
+}
+
+body.dark-mode .operator {
+    background-color: #613dc1; 
+    color: white;
+}
+
+body.dark-mode #equal-sign {
+    background-color: #502ed6;
+    color: white;
+}
+
+
+body.dark-mode .additionalBtn  {
+    background-color: #9987cf;
+}
+
+body.dark-mode #calculator-display {
+    background-color: #9298be;
+    color: #f1f1f1;
+    border: none;
+}
+
+body.dark-mode #theme-switch svg:first-child {
+    display: block;
+}
+
+body.dark-mode #theme-switch svg:last-child {
+    display: none;
+}

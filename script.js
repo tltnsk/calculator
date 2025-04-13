@@ -141,4 +141,10 @@ function divide(a, b) {
     else return NaN;
 }
 
+const themeSwitch = document.getElementById("theme-switch");
+
+themeSwitch.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+});
+
 updateDisplay();
