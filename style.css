@@ -166,14 +166,13 @@ body.dark-mode #equal-sign {
     color: white;
 }
 
-
 body.dark-mode .additionalBtn  {
     background-color: #9987cf;
 }
 
 body.dark-mode #calculator-display {
-    background-color: #9298be;
-    color: #f1f1f1;
+    background-color: #c9c9dd;
+    color: #502ed6;
     border: none;
 }
 
