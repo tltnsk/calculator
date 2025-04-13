@@ -3,6 +3,7 @@ const display = document.getElementById("calculator-display");
 
 // Operators
 const clearButton = document.getElementById("clearButton");
+const deleteButton = document.getElementById("deleteButton");
 const dot = document.getElementById("dot");
 
 const numberButtons = document.querySelectorAll('[data-number]');
@@ -36,6 +37,7 @@ function calculate(firstOperand, secondOperand, operator) {
         default:
             return secondOperand;
     }
+    operator.value = null;
 }
 
 numberButtons.forEach(button => {
@@ -64,10 +66,15 @@ operatorButtons.forEach(button => {
             currentInput = calculate(firstOperand, currentInput, operator);
             updateDisplay();
             firstOperand = currentInput;
+            waitingForSecondOperand = true;
         } else if (!waitingForSecondOperand) {
             firstOperand = currentInput;
         }
 
+        if (waitingForSecondOperand) {
+            currentInput = firstOperand;
+            updateDisplay();
+        }
         switch(button.textContent) {
             case '+': operator = '+'; break;
             case '-': operator = '-'; break;
@@ -76,7 +83,6 @@ operatorButtons.forEach(button => {
         }
 
         waitingForSecondOperand = true;
-        updateDisplay();
     });
 });
 
@@ -87,8 +93,33 @@ equalSign.addEventListener('click', () => {
         updateDisplay();
     }
 
-    firstOperand = result;
+    firstOperand = currentInput;
+    operator = null;
     waitingForSecondOperand = true;
+});
+
+clearButton.addEventListener('click', () => {
+    if (currentInput.length > 1) {
+        currentInput = currentInput.slice(0, -1); // remove last character
+    } else {
+        currentInput = '0';
+    }
+
+    updateDisplay();
+});
+
+deleteButton.addEventListener('click', () => {
+    currentInput = '0';
+    operator = null;
+    waitingForSecondOperand = true;
+    updateDisplay();
+});
+
+dot.addEventListener('click', () => {
+    if (!currentInput.includes('.')) {
+        currentInput += '.';
+        updateDisplay();
+    }
 });
 
 function add(a, b) {
@@ -107,7 +138,7 @@ function divide(a, b) {
     if (b != 0) {
         return a / b;
     }
-    else return "You cannot divide by 0!";
+    else return NaN;
 }
 
 updateDisplay();
